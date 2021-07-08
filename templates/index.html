@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./static/index.css">
+    <link rel="shortcut icon" href="static/favicon.ico"/>
+    <title>Calculadora de Salário</title>
+</head>
+<body>
+    <div class="body">
+        <div class="header">
+            <a class="title" href="http://127.0.0.1:5000">CALCULADORA DE SALÁRIO</a>
+        </div>
+        <div class="page">
+            <form class="inputs" action="/calcular" method="POST">
+                <h1 class="hinp" for="sal"> Salário </h1>
+                <input class="inp" type="number" name="sal" min="1" value="0" step=".01" required/>
+                <h1 class="hinp" for="dep"> Número de dependentes </h1>
+                <input class="inp" type="number" name="dep" min="0" value="0" step="1" required/>
+                <h1 class="hinp" for="desconto"> Desconto </h1>
+                <input class="inp" type="number" name="desconto" min="0" value="0" step=".01" required/>
+                <button class="calc" type="submit">CALCULAR</button>
+            </form>
+            <div class="results">
+                <table>
+                    <tr class="table1">
+                        <th>SALARIO BRUTO</th>
+                        <th>INSS</th>
+                        <th>IRPF</th>
+                        <th>DESCONTOS</th>
+                        <th>TOTAL</th>
+                        <th>RESULTADO</th>
+                    </tr>
+                </table>
+                <table>    
+                    <tr class="table2">
+                        <th>{{ r }} {{ sal }}</th>
+                        <th>{{ r }} {{ valorINSS }}</th>
+                        <th>{{ r }} {{ valorIRRF }}</th>
+                        <th>{{ r }} {{ desconto }}</th>
+                        <th>{{ r }} {{ descontoTotal}} {{ parA }}{{ descontoPorcem }}{{ pc }}{{parF}}</th>
+                        <th>{{ r }} {{ salarioLiq }}</th>
+                    </tr>
+                </table>
+            </div>
+            <a class="limpar" href="http://127.0.0.1:5000">LIMPAR</a>
+        </div>
+        </div>
+</body>
+</html>
